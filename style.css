@@ -1,0 +1,211 @@
+:root {
+  --teal: #0f4c5c;
+  --teal-deep: #093640;
+  --teal-soft: #e4eef0;
+  --ink: #202b2c;
+  --ink-soft: #566264;
+  --accent: #c8862d;
+  --accent-soft: #7a9e82;
+  --rule: #dde4e3;
+  --paper: #ffffff;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--teal-deep);
+  color: #EAF2F1;
+}
+.masthead-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+.institution { font-family: var(--serif); font-style: italic; }
+.back-to-top-mini { color: #EAF2F1; text-decoration: none; opacity: 0.65; }
+.back-to-top-mini:hover { opacity: 1; }
+
+/* ---------- Sections ---------- */
+main { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+.section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section:last-child { border-bottom: none; }
+
+@media (max-width: 640px) {
+  main { padding: 0 18px; }
+  .section { padding: 36px 0; }
+}
+
+/* ---------- Typography ---------- */
+h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4.6vw, 2.35rem);
+  line-height: 1.2;
+  margin: 0 0 14px;
+  color: var(--teal-deep);
+}
+h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--teal-deep);
+  margin: 0 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--teal);
+}
+h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 36px 0 6px;
+}
+h3:first-child { margin-top: 0; }
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 18px;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.narrative p, .methodology-text {
+  max-width: 66ch;
+  color: var(--ink);
+  margin: 0 0 15px;
+  font-size: 0.98rem;
+}
+
+.chart-desc {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 62ch;
+  margin: 0 0 14px;
+}
+
+/* ---------- Chart blocks ---------- */
+.chart-block { margin-bottom: 8px; }
+canvas { max-width: 100%; }
+
+/* ---------- Profile stats & location profiles ---------- */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+.profile-stat {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+.profile-stat .value {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--teal-deep);
+  line-height: 1.2;
+}
+.profile-stat .label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.location-profile { margin-bottom: 16px; }
+.location-profile:last-child { margin-bottom: 0; }
+.location-profile .name {
+  font-weight: 600;
+  color: var(--teal-deep);
+  display: block;
+  margin-bottom: 3px;
+}
+.location-profile p {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin: 0;
+  max-width: 66ch;
+}
+
+/* ---------- Map ---------- */
+#map {
+  height: 360px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  margin-top: 6px;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: 6px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+/* ---------- Itinerary ---------- */
+.itinerary-day { margin-bottom: 26px; }
+.itinerary-day-label {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--teal-deep);
+  margin-bottom: 10px;
+}
+.itinerary-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 10px;
+  padding: 9px 0;
+  border-top: 1px solid var(--rule);
+}
+.itinerary-item:first-child { border-top: none; }
+.itinerary-time { color: var(--accent); font-weight: 600; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+.itinerary-title { font-weight: 600; font-size: 0.95rem; }
+.itinerary-location { color: var(--teal); font-size: 0.86rem; }
+.itinerary-notes { color: var(--ink-soft); font-size: 0.86rem; margin-top: 2px; }
+
+/* ---------- Footer / methodology ---------- */
+.section-footer { padding-bottom: 56px; }
+.footer-credit { font-family: var(--serif); font-style: italic; color: var(--ink-soft); margin-top: 22px; font-size: 0.92rem; }
+.back-to-top { color: var(--teal); text-decoration: none; font-size: 0.88rem; }
+.back-to-top:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

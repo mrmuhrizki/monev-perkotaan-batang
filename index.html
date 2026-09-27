@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<title>Pocket Book Monev — Kabupaten Batang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span id="institution" class="institution"></span>
+    <a href="#top" class="back-to-top-mini">↑</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="section hero">
+    <h1 id="title"></h1>
+    <p id="tagline" class="tagline"></p>
+    <div class="meta-row">
+      <span class="meta-item">📅 <span id="dateRange"></span></span>
+      <span class="meta-item">📍 <span id="locationsSummary"></span></span>
+      <span class="meta-item">🎯 <span id="focusAreas"></span></span>
+    </div>
+    <div id="narrative" class="narrative"></div>
+  </section>
+
+  <!-- KONTEKS & LOKASI (satu section: profil, tren, perbandingan, IKB, peta) -->
+  <section class="section" id="section-data">
+    <h2>Konteks Wilayah &amp; Lokasi Kunjungan</h2>
+
+    <div class="chart-block" id="block-profile">
+      <h3>Profil Kabupaten Batang</h3>
+      <p class="chart-desc" id="profile-narrative"></p>
+      <div class="profile-stats" id="profile-stats"></div>
+    </div>
+
+    <div class="chart-block" id="block-trend">
+      <h3 id="trend-title"></h3>
+      <p class="chart-desc" id="trend-desc"></p>
+      <canvas id="trendChart" height="220"></canvas>
+    </div>
+
+    <div class="chart-block" id="block-comparison">
+      <h3 id="comparison-title"></h3>
+      <p class="chart-desc" id="comparison-desc"></p>
+      <canvas id="comparisonChart" height="240"></canvas>
+    </div>
+
+    <div class="chart-block" id="block-ikb">
+      <h3 id="ikb-title"></h3>
+      <p class="chart-desc" id="ikb-desc"></p>
+      <canvas id="ikbChart" height="280"></canvas>
+    </div>
+
+    <div class="chart-block" id="block-location-profiles">
+      <h3>Profil Kawasan Utama</h3>
+      <div id="location-profiles"></div>
+    </div>
+
+    <div class="chart-block" id="block-map">
+      <h3>Peta Lokasi Kunjungan</h3>
+      <p id="map-desc" class="chart-desc"></p>
+      <div id="legend" class="legend"></div>
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section class="section" id="section-itinerary">
+    <h2>Rangkaian Kunjungan</h2>
+    <div id="itinerary" class="itinerary"></div>
+  </section>
+
+  <!-- METODOLOGI -->
+  <section class="section section-footer" id="section-methodology">
+    <h2>Metodologi &amp; Sumber</h2>
+    <p id="methodology-text" class="methodology-text"></p>
+    <p class="footer-credit" id="footer-institution"></p>
+    <a href="#top" class="back-to-top">↑ kembali ke atas</a>
+  </section>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
